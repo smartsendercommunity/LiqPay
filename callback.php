@@ -75,7 +75,7 @@ if ($data["status"] != "success") {
 // Запуск триггера в Smart Sender
 $userId = (explode("-", $data["order_id"]))[0];
 $trigger["name"] = $_GET["action"];
-json_decode(send_bearer("https://api.smartsender.com/v1/contacts/".$userId."/fire?name=".$rtigger, $ss_token, "POST", $trigger), true);
+json_decode(send_bearer("https://api.smartsender.com/v1/contacts/".$userId."/fire?name=".$trigger, $ss_token, "POST", $trigger), true);
 $result["state"] = true;
 
 echo json_encode($data);
